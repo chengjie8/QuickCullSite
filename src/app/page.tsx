@@ -81,6 +81,26 @@ const features = [
   },
 ];
 
+const supportedFormats: { brand: string; extensions: string[] }[] = [
+  { brand: "Sony", extensions: ["ARW", "SR2", "SRF"] },
+  { brand: "Canon", extensions: ["CRW", "CR2", "CR3"] },
+  { brand: "Nikon", extensions: ["NEF", "NRW"] },
+  { brand: "Fujifilm", extensions: ["RAF"] },
+  { brand: "Olympus / OM", extensions: ["ORF"] },
+  { brand: "Panasonic / Leica", extensions: ["RW2", "RWL", "DNG"] },
+  { brand: "Pentax", extensions: ["PEF"] },
+  { brand: "Samsung", extensions: ["SRW"] },
+  { brand: "Sigma", extensions: ["X3F"] },
+  {
+    brand: "Hasselblad / Phase One & others",
+    extensions: [
+      "3FR", "FFF", "IIQ", "MOS", "MEF", "MRW",
+      "ERF", "DCR", "K25", "KDC", "MDC", "PTX",
+      "BAY", "CAP", "RAW",
+    ],
+  },
+];
+
 const shortcuts: { keys: string[]; action: string }[] = [
   { keys: ["←", "→", "↑", "↓"], action: "Navigate photos" },
   { keys: ["P"], action: "Pick" },
@@ -321,6 +341,68 @@ export default function Home() {
                 >
                   {feature.description}
                 </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Supported RAW Formats ─── */}
+      <section className="px-6 py-12 md:py-16">
+        <div className="mx-auto max-w-3xl">
+          <div className="mb-8 text-center">
+            <h2 className="scroll-reveal font-[family-name:var(--font-syne)] text-3xl font-bold tracking-tight sm:text-4xl">
+              📷 Supported RAW Formats
+            </h2>
+            <p
+              className="scroll-reveal mt-3 text-base"
+              data-delay="100"
+              style={{ color: "var(--text-muted)" }}
+            >
+              Every major camera brand, ready to cull out of the box.
+            </p>
+          </div>
+
+          <div
+            className="scroll-reveal-scale overflow-hidden rounded-xl"
+            data-delay="80"
+            style={{
+              background: "var(--surface)",
+              border: "1px solid var(--border-subtle)",
+            }}
+          >
+            {supportedFormats.map((format, i) => (
+              <div
+                key={format.brand}
+                className="shortcut-row grid grid-cols-[140px_1fr] items-center gap-2 px-5 py-3 sm:grid-cols-[200px_1fr]"
+                style={{
+                  borderBottom:
+                    i < supportedFormats.length - 1
+                      ? "1px solid var(--border-subtle)"
+                      : "none",
+                }}
+              >
+                <span
+                  className="text-sm font-medium"
+                  style={{ color: "var(--text)" }}
+                >
+                  {format.brand}
+                </span>
+                <div className="flex flex-wrap gap-1.5">
+                  {format.extensions.map((ext) => (
+                    <span
+                      key={ext}
+                      className="rounded px-2 py-0.5 font-[family-name:var(--font-ibm-plex-mono)] text-xs"
+                      style={{
+                        background: "var(--surface-raised)",
+                        color: "var(--accent-light)",
+                        border: "1px solid var(--border)",
+                      }}
+                    >
+                      .{ext.toLowerCase()}
+                    </span>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
