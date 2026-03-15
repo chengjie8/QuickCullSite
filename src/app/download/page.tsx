@@ -119,9 +119,9 @@ export default function Download() {
       </section>
 
       {/* ─── Download Card ─── */}
-      <section className="px-6 pb-10">
+      <section className="px-4 pb-10 sm:px-6">
         <div
-          className="fade-in-up delay-2 mx-auto max-w-2xl rounded-2xl p-6 sm:p-8"
+          className="fade-in-up delay-2 mx-auto max-w-2xl rounded-2xl p-4 sm:p-6 md:p-8"
           style={{
             background: "var(--surface)",
             border: "1px solid var(--border-subtle)",
@@ -180,22 +180,24 @@ export default function Download() {
       </section>
 
       {/* ─── Unsigned App Notice ─── */}
-      <section className="px-6 pb-10">
+      <section className="px-4 pb-10 sm:px-6">
         <div
-          className="scroll-reveal-scale mx-auto max-w-2xl rounded-2xl p-6 sm:p-8"
+          className="scroll-reveal-scale mx-auto max-w-2xl overflow-hidden rounded-2xl p-4 sm:p-6 md:p-8"
           style={{
             background: "rgba(201, 148, 58, 0.04)",
             border: "1px solid rgba(201, 148, 58, 0.15)",
           }}
         >
-          <div className="flex items-start gap-3">
-            <span className="mt-0.5 text-lg">🔓</span>
-            <div>
-              <h3 className="font-[family-name:var(--font-syne)] text-base font-semibold tracking-tight">
-                Important: app is currently unsigned
+          <div className="flex items-start gap-2.5 sm:gap-3">
+            <span className="mt-0.5 hidden text-lg sm:block">🔓</span>
+            <div className="min-w-0 flex-1">
+              <h3 className="font-[family-name:var(--font-syne)] text-sm font-semibold tracking-tight sm:text-base">
+                🔓 <span className="sm:hidden">Important:</span>
+                <span className="hidden sm:inline">Important:</span> app is
+                currently unsigned
               </h3>
               <p
-                className="mt-2 text-sm leading-relaxed"
+                className="mt-2 text-xs leading-relaxed sm:text-sm"
                 style={{ color: "var(--text-secondary)" }}
               >
                 Code signing is coming in the next release. For now, macOS will
@@ -206,7 +208,7 @@ export default function Download() {
 
               {/* ─── How to open Terminal ─── */}
               <div
-                className="mt-4 rounded-lg p-4"
+                className="mt-4 rounded-lg p-3 sm:p-4"
                 style={{
                   background: "var(--surface)",
                   border: "1px solid var(--border-subtle)",
@@ -219,7 +221,7 @@ export default function Download() {
                   Step 1 &mdash; Open Terminal
                 </p>
                 <p
-                  className="text-sm leading-relaxed"
+                  className="text-xs leading-relaxed sm:text-sm"
                   style={{ color: "var(--text-secondary)" }}
                 >
                   Press{" "}
@@ -234,8 +236,9 @@ export default function Download() {
 
                 {/* Spotlight mockup */}
                 <div
-                  className="mx-auto mt-4 max-w-sm overflow-hidden rounded-xl"
+                  className="mx-auto mt-4 overflow-hidden rounded-xl"
                   style={{
+                    maxWidth: "min(100%, 384px)",
                     background: "#1c1c1e",
                     border: "1px solid #333338",
                     boxShadow: "0 8px 40px rgba(0, 0, 0, 0.5)",
@@ -243,18 +246,19 @@ export default function Download() {
                 >
                   {/* Search bar */}
                   <div
-                    className="flex items-center gap-2.5 px-4 py-3"
+                    className="flex items-center gap-2.5 px-3 py-2.5 sm:px-4 sm:py-3"
                     style={{ borderBottom: "1px solid #333338" }}
                   >
                     <svg
-                      width="16"
-                      height="16"
+                      width="14"
+                      height="14"
                       viewBox="0 0 16 16"
                       fill="none"
                       stroke="#999"
                       strokeWidth="1.5"
                       strokeLinecap="round"
                       strokeLinejoin="round"
+                      className="flex-shrink-0"
                     >
                       <circle cx="7" cy="7" r="5" />
                       <path d="M11 11l3 3" />
@@ -268,14 +272,14 @@ export default function Download() {
                   </div>
                   {/* Result row */}
                   <div
-                    className="flex items-center gap-3 px-4 py-2.5"
+                    className="flex items-center gap-3 px-3 py-2 sm:px-4 sm:py-2.5"
                     style={{ background: "rgba(59, 130, 246, 0.2)" }}
                   >
                     <div
-                      className="flex h-8 w-8 items-center justify-center rounded-md text-base"
+                      className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-md text-base sm:h-8 sm:w-8"
                       style={{ background: "#1a1a1a" }}
                     >
-                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                      <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
                         <rect width="18" height="18" rx="4" fill="#000" />
                         <path d="M4 13l4-4-4-4" stroke="#4ade80" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                         <path d="M9 13h5" stroke="#4ade80" strokeWidth="1.5" strokeLinecap="round" />
@@ -311,26 +315,26 @@ export default function Download() {
               >
                 {/* Title bar */}
                 <div
-                  className="flex items-center justify-between px-4 py-2.5"
+                  className="flex items-center justify-between px-3 py-2 sm:px-4 sm:py-2.5"
                   style={{ borderBottom: "1px solid var(--border-subtle)" }}
                 >
                   <div className="flex items-center gap-2">
                     <div className="flex gap-1.5">
                       <span
-                        className="block h-3 w-3 rounded-full"
+                        className="block h-2.5 w-2.5 rounded-full sm:h-3 sm:w-3"
                         style={{ background: "#ff5f57" }}
                       />
                       <span
-                        className="block h-3 w-3 rounded-full"
+                        className="block h-2.5 w-2.5 rounded-full sm:h-3 sm:w-3"
                         style={{ background: "#febc2e" }}
                       />
                       <span
-                        className="block h-3 w-3 rounded-full"
+                        className="block h-2.5 w-2.5 rounded-full sm:h-3 sm:w-3"
                         style={{ background: "#28c840" }}
                       />
                     </div>
                     <span
-                      className="ml-2 font-[family-name:var(--font-ibm-plex-mono)] text-xs"
+                      className="ml-1 font-[family-name:var(--font-ibm-plex-mono)] text-xs sm:ml-2"
                       style={{ color: "var(--text-muted)" }}
                     >
                       Terminal
@@ -338,7 +342,7 @@ export default function Download() {
                   </div>
                   <button
                     onClick={handleCopy}
-                    className="flex items-center gap-1.5 rounded-md px-2.5 py-1 text-xs transition-all"
+                    className="flex items-center gap-1 rounded-md px-2 py-1 text-xs transition-all sm:gap-1.5 sm:px-2.5"
                     style={{
                       color: copied ? "#28c840" : "var(--text-muted)",
                       background: copied
@@ -380,8 +384,11 @@ export default function Download() {
                 </div>
 
                 {/* Command area */}
-                <div className="overflow-x-auto px-4 py-4">
-                  <pre className="font-[family-name:var(--font-ibm-plex-mono)] text-sm leading-relaxed">
+                <div className="overflow-x-auto px-3 py-3 sm:px-4 sm:py-4">
+                  <pre
+                    className="font-[family-name:var(--font-ibm-plex-mono)] text-xs leading-relaxed sm:text-sm"
+                    style={{ whiteSpace: "pre-wrap", wordBreak: "break-all" }}
+                  >
                     <span style={{ color: "#28c840" }}>$</span>{" "}
                     <span style={{ color: "var(--text)" }}>
                       {QUARANTINE_CMD}
@@ -404,7 +411,7 @@ export default function Download() {
 
       {/* ─── Divider ─── */}
       <div
-        className="divider-line scroll-reveal-line mx-auto h-px max-w-2xl"
+        className="divider-line scroll-reveal-line mx-auto h-px max-w-2xl px-4 sm:px-0"
         style={{
           background:
             "linear-gradient(90deg, transparent, var(--border), transparent)",
@@ -412,7 +419,7 @@ export default function Download() {
       />
 
       {/* ─── Release Notes ─── */}
-      <section className="px-6 py-10 md:py-14">
+      <section className="px-4 py-10 sm:px-6 md:py-14">
         <div className="mx-auto max-w-2xl">
           <h2 className="scroll-reveal font-[family-name:var(--font-syne)] text-2xl font-bold tracking-tight sm:text-3xl">
             What&apos;s Changed
@@ -437,7 +444,7 @@ export default function Download() {
       </section>
 
       {/* ─── Footer ─── */}
-      <footer className="px-6 pb-10 pt-4">
+      <footer className="px-4 pb-10 pt-4 sm:px-6">
         <div
           className="divider-line scroll-reveal-line mx-auto mb-8 h-px max-w-2xl"
           style={{
