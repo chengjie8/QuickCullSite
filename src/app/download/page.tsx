@@ -182,14 +182,13 @@ export default function Download() {
             <span className="mt-0.5 hidden text-lg sm:block">&#x2705;</span>
             <div className="min-w-0 flex-1">
               <h3 className="font-[family-name:var(--font-syne)] text-sm font-semibold tracking-tight sm:text-base">
-                <span className="sm:hidden">&#x2705; </span>Signed &amp; Notarized
+                <span className="sm:hidden">&#x2705; </span>Install in Seconds
               </h3>
               <p
                 className="mt-2 text-xs leading-relaxed sm:text-sm"
                 style={{ color: "var(--text-secondary)" }}
               >
-                QuickCull is signed and notarized by Apple. Just open the
-                downloaded <code>.dmg</code>, drag QuickCull to your
+                Open the downloaded <code>.dmg</code>, drag QuickCull to your
                 Applications folder, and launch it &mdash; no extra steps
                 required.
               </p>
