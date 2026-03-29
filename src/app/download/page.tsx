@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const changes = [
   "Add folder tree workspace and bottom filmstrip UI",
@@ -15,17 +15,7 @@ const changes = [
   "Minor UI improvements",
 ];
 
-const QUARANTINE_CMD =
-  "xattr -dr com.apple.quarantine /Applications/QuickCull.app";
-
 export default function Download() {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText(QUARANTINE_CMD);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
   useEffect(() => {
     const revealClasses = [
       "scroll-reveal",
@@ -179,230 +169,29 @@ export default function Download() {
         </div>
       </section>
 
-      {/* ─── Unsigned App Notice ─── */}
+      {/* ─── Install Instructions ─── */}
       <section className="px-4 pb-10 sm:px-6">
         <div
           className="scroll-reveal-scale mx-auto max-w-2xl overflow-hidden rounded-2xl p-4 sm:p-6 md:p-8"
           style={{
-            background: "rgba(201, 148, 58, 0.04)",
-            border: "1px solid rgba(201, 148, 58, 0.15)",
+            background: "rgba(40, 200, 64, 0.04)",
+            border: "1px solid rgba(40, 200, 64, 0.15)",
           }}
         >
           <div className="flex items-start gap-2.5 sm:gap-3">
-            <span className="mt-0.5 hidden text-lg sm:block">🔓</span>
+            <span className="mt-0.5 hidden text-lg sm:block">&#x2705;</span>
             <div className="min-w-0 flex-1">
               <h3 className="font-[family-name:var(--font-syne)] text-sm font-semibold tracking-tight sm:text-base">
-                🔓 <span className="sm:hidden">Important:</span>
-                <span className="hidden sm:inline">Important:</span> app is
-                currently unsigned
+                <span className="sm:hidden">&#x2705; </span>Signed &amp; Notarized
               </h3>
               <p
                 className="mt-2 text-xs leading-relaxed sm:text-sm"
                 style={{ color: "var(--text-secondary)" }}
               >
-                Code signing is coming in the next release. For now, macOS will
-                block the app from opening because it&apos;s from an
-                unidentified developer. After installing, open Terminal and run
-                the command below.
-              </p>
-
-              {/* ─── How to open Terminal ─── */}
-              <div
-                className="mt-4 rounded-lg p-3 sm:p-4"
-                style={{
-                  background: "var(--surface)",
-                  border: "1px solid var(--border-subtle)",
-                }}
-              >
-                <p
-                  className="mb-3 text-xs font-semibold uppercase tracking-[0.15em]"
-                  style={{ color: "var(--text-muted)" }}
-                >
-                  Step 1 &mdash; Open Terminal
-                </p>
-                <p
-                  className="text-xs leading-relaxed sm:text-sm"
-                  style={{ color: "var(--text-secondary)" }}
-                >
-                  Press{" "}
-                  <kbd>⌘</kbd>{" "}
-                  <span className="text-xs" style={{ color: "var(--text-muted)" }}>+</span>{" "}
-                  <kbd>Space</kbd>{" "}
-                  to open Spotlight, then type{" "}
-                  <span style={{ color: "var(--accent-light)" }}>&ldquo;Terminal&rdquo;</span>{" "}
-                  and hit{" "}
-                  <kbd>Return</kbd>
-                </p>
-
-                {/* Spotlight mockup */}
-                <div
-                  className="mx-auto mt-4 overflow-hidden rounded-xl"
-                  style={{
-                    maxWidth: "min(100%, 384px)",
-                    background: "#1c1c1e",
-                    border: "1px solid #333338",
-                    boxShadow: "0 8px 40px rgba(0, 0, 0, 0.5)",
-                  }}
-                >
-                  {/* Search bar */}
-                  <div
-                    className="flex items-center gap-2.5 px-3 py-2.5 sm:px-4 sm:py-3"
-                    style={{ borderBottom: "1px solid #333338" }}
-                  >
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      stroke="#999"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="flex-shrink-0"
-                    >
-                      <circle cx="7" cy="7" r="5" />
-                      <path d="M11 11l3 3" />
-                    </svg>
-                    <span
-                      className="font-[family-name:var(--font-outfit)] text-sm"
-                      style={{ color: "var(--text)" }}
-                    >
-                      Terminal
-                    </span>
-                  </div>
-                  {/* Result row */}
-                  <div
-                    className="flex items-center gap-3 px-3 py-2 sm:px-4 sm:py-2.5"
-                    style={{ background: "rgba(59, 130, 246, 0.2)" }}
-                  >
-                    <div
-                      className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-md text-base sm:h-8 sm:w-8"
-                      style={{ background: "#1a1a1a" }}
-                    >
-                      <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
-                        <rect width="18" height="18" rx="4" fill="#000" />
-                        <path d="M4 13l4-4-4-4" stroke="#4ade80" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                        <path d="M9 13h5" stroke="#4ade80" strokeWidth="1.5" strokeLinecap="round" />
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="text-sm font-medium" style={{ color: "var(--text)" }}>
-                        Terminal
-                      </p>
-                      <p className="text-xs" style={{ color: "var(--text-muted)" }}>
-                        Application
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* ─── Step 2 label ─── */}
-              <p
-                className="mb-0 mt-5 text-xs font-semibold uppercase tracking-[0.15em]"
-                style={{ color: "var(--text-muted)" }}
-              >
-                Step 2 &mdash; Paste and run this command
-              </p>
-
-              {/* ─── Terminal UI ─── */}
-              <div
-                className="mt-4 overflow-hidden rounded-lg"
-                style={{
-                  background: "#0a0a0e",
-                  border: "1px solid var(--border)",
-                }}
-              >
-                {/* Title bar */}
-                <div
-                  className="flex items-center justify-between px-3 py-2 sm:px-4 sm:py-2.5"
-                  style={{ borderBottom: "1px solid var(--border-subtle)" }}
-                >
-                  <div className="flex items-center gap-2">
-                    <div className="flex gap-1.5">
-                      <span
-                        className="block h-2.5 w-2.5 rounded-full sm:h-3 sm:w-3"
-                        style={{ background: "#ff5f57" }}
-                      />
-                      <span
-                        className="block h-2.5 w-2.5 rounded-full sm:h-3 sm:w-3"
-                        style={{ background: "#febc2e" }}
-                      />
-                      <span
-                        className="block h-2.5 w-2.5 rounded-full sm:h-3 sm:w-3"
-                        style={{ background: "#28c840" }}
-                      />
-                    </div>
-                    <span
-                      className="ml-1 font-[family-name:var(--font-ibm-plex-mono)] text-xs sm:ml-2"
-                      style={{ color: "var(--text-muted)" }}
-                    >
-                      Terminal
-                    </span>
-                  </div>
-                  <button
-                    onClick={handleCopy}
-                    className="flex items-center gap-1 rounded-md px-2 py-1 text-xs transition-all sm:gap-1.5 sm:px-2.5"
-                    style={{
-                      color: copied ? "#28c840" : "var(--text-muted)",
-                      background: copied
-                        ? "rgba(40, 200, 64, 0.1)"
-                        : "rgba(255, 255, 255, 0.04)",
-                      border: `1px solid ${copied ? "rgba(40, 200, 64, 0.2)" : "var(--border-subtle)"}`,
-                    }}
-                  >
-                    {copied ? (
-                      <svg
-                        width="12"
-                        height="12"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M3 8.5l3.5 3.5 6.5-8" />
-                      </svg>
-                    ) : (
-                      <svg
-                        width="12"
-                        height="12"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <rect x="5" y="5" width="9" height="9" rx="1.5" />
-                        <path d="M5 11H3.5A1.5 1.5 0 0 1 2 9.5V3.5A1.5 1.5 0 0 1 3.5 2h6A1.5 1.5 0 0 1 11 3.5V5" />
-                      </svg>
-                    )}
-                    {copied ? "Copied!" : "Copy"}
-                  </button>
-                </div>
-
-                {/* Command area */}
-                <div className="overflow-x-auto px-3 py-3 sm:px-4 sm:py-4">
-                  <pre
-                    className="font-[family-name:var(--font-ibm-plex-mono)] text-xs leading-relaxed sm:text-sm"
-                    style={{ whiteSpace: "pre-wrap", wordBreak: "break-all" }}
-                  >
-                    <span style={{ color: "#28c840" }}>$</span>{" "}
-                    <span style={{ color: "var(--text)" }}>
-                      {QUARANTINE_CMD}
-                    </span>
-                  </pre>
-                </div>
-              </div>
-
-              <p
-                className="mt-3 text-xs leading-relaxed"
-                style={{ color: "var(--text-muted)" }}
-              >
-                This removes the quarantine flag that macOS sets on downloaded
-                apps. You only need to run it once.
+                QuickCull is signed and notarized by Apple. Just open the
+                downloaded <code>.dmg</code>, drag QuickCull to your
+                Applications folder, and launch it &mdash; no extra steps
+                required.
               </p>
             </div>
           </div>
