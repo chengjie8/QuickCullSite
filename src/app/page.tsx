@@ -132,6 +132,8 @@ const shortcuts: { keys: string[]; action: string }[] = [
     keys: ["⌘", "+", "⌫"],
     action: "Delete current photo or selected photos after confirmation",
   },
+  { keys: ["⌘", "+", "⇧", "+", "I"], action: "Import: open a folder of RAW photos" },
+  { keys: ["⌘", "+", "⇧", "+", "E"], action: "Export picks to Lightroom with XMP sidecars" },
 ];
 
 export default function Home() {
