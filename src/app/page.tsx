@@ -96,7 +96,7 @@ const supportedFormats: { brand: string; extensions: string[] }[] = [
     extensions: [
       "3FR", "FFF", "IIQ", "MOS", "MEF", "MRW",
       "ERF", "DCR", "K25", "KDC", "MDC", "PTX",
-      "BAY", "CAP", "RAW",
+      "BAY", "CAP", "RAW", "ARI",
     ],
   },
 ];
