@@ -3,16 +3,14 @@
 import { useEffect } from "react";
 
 const changes = [
-  "Add folder tree workspace and bottom filmstrip UI",
-  "Refine editing workflow and filmstrip UI",
-  "Migrate analysis pipeline to wgpu",
-  "Migrate image analysis to wgpu and improve throughput",
-  "Improve histogram rendering and preview behavior",
-  "Fix zoom refinement stutter",
-  "Improve zoom cache reuse and scheduling",
-  "Polish zoom upload efficiency and cache retention",
-  "Bump opencv from 0.96.0 to 0.98.1",
-  "Minor UI improvements",
+  "Faster, more responsive culling when working with large photo folders",
+  "Lower memory usage during long editing sessions",
+  "Smoother filmstrip scrolling and overall UI interactions",
+  "Quicker histogram and preview updates",
+  "Faster photo export",
+  "Improved behavior when your system is under memory pressure",
+  "Snappier zoom and preview transitions",
+  "Broad responsiveness improvements across the app",
 ];
 
 export default function Download() {
@@ -121,7 +119,7 @@ export default function Download() {
             <div>
               <div className="flex items-center gap-3">
                 <h2 className="font-[family-name:var(--font-syne)] text-2xl font-bold tracking-tight">
-                  v1.2.0
+                  v2.0.0
                 </h2>
                 <span
                   className="rounded-full px-2.5 py-0.5 text-xs font-semibold"
@@ -142,7 +140,7 @@ export default function Download() {
               </p>
             </div>
             <a
-              href="/QuickCull-1.2.0-macos12-arm64.dmg"
+              href="/QuickCull-2.0.0-macos12-arm64.dmg"
               download
               className="cta-btn flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold whitespace-nowrap"
               style={{
