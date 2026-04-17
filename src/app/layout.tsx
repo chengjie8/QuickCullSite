@@ -20,9 +20,9 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "QuickCull — Fast Photo Culling for Photographers",
+  title: "QuickCull — Fast RAW Photo Culling for Photographers",
   description:
-    "A faster, cleaner, more focused culling app for photographers. Move through large RAW shoots fast, make decisions quickly, and hand everything off to Lightroom with sidecars ready to go.",
+    "A blazing-fast RAW culling app for photographers. Move through large RAW shoots, make decisions quickly, and hand everything off to Lightroom with sidecars ready to go.",
 };
 
 export default function RootLayout({

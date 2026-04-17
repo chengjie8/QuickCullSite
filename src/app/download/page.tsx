@@ -101,7 +101,7 @@ export default function Download() {
             className="fade-in-up delay-1 mx-auto mt-5 max-w-xl text-base leading-relaxed sm:text-lg"
             style={{ color: "var(--text-secondary)" }}
           >
-            The fastest way to cull your photos. macOS only.
+            The fastest way to cull your RAW photos. macOS only.
           </p>
         </div>
       </section>

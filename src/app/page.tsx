@@ -238,9 +238,9 @@ export default function Home() {
             className="fade-in-up delay-2 mx-auto mt-5 max-w-xl text-base leading-relaxed sm:text-lg md:text-xl"
             style={{ color: "var(--text-secondary)" }}
           >
-            A faster, cleaner, more focused culling app for photographers who
-            want to get to Lightroom quickly without Photo Mechanic&apos;s
-            broader ingest and catalog complexity.
+            A blazing-fast RAW culling app for photographers who want to get to
+            Lightroom quickly &mdash; without Photo Mechanic&apos;s broader
+            ingest and catalog complexity.
           </p>
 
           <div
@@ -315,7 +315,7 @@ export default function Home() {
               data-delay="100"
               style={{ color: "var(--text-muted)" }}
             >
-              Every feature built around one workflow: cull fast, decide
+              Every feature built around one workflow: cull RAW fast, decide
               confidently.
             </p>
           </div>
@@ -498,7 +498,7 @@ export default function Home() {
           <p className="scroll-reveal-blur font-[family-name:var(--font-syne)] text-xl font-bold tracking-tight sm:text-2xl">
             Stop managing catalogs.
             <br />
-            Start culling.
+            Start culling RAW.
           </p>
           <p
             className="scroll-reveal mt-4 text-sm"
