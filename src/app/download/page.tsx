@@ -2,18 +2,7 @@
 
 import { useEffect } from "react";
 
-const changes = [
-  "A native Mac menu bar puts your settings exactly where you expect them",
-  "A streamlined, distraction-free workspace keeps the focus on your images",
-  "Status updates appear quietly in the corner instead of getting in your way",
-  "Crop and straightening controls float gracefully over your photo as you work",
-  "Export, Clear Selection, and Reset Image are now a right-click away on the filmstrip",
-  "The side panel shows precisely which metadata template is applied to each image",
-  "Auto-Level now recognizes vertical references — buildings, walls, and doorframes — so architectural and interior shots come out perfectly aligned",
-  "Apply Auto-Level across a batch or run it more than once with confidence — corrections never compound, and hand-straightening is always preserved",
-  "Confident automatic straightening now extends to tilts of up to 15 degrees",
-  "Faster and more dependable across large shoots and when working with RAW files",
-];
+const changes = ["Minor security update"];
 
 export default function Download() {
   useEffect(() => {
@@ -121,7 +110,7 @@ export default function Download() {
             <div>
               <div className="flex items-center gap-3">
                 <h2 className="font-[family-name:var(--font-syne)] text-2xl font-bold tracking-tight">
-                  v2.3.0
+                  v2.3.1
                 </h2>
                 <span
                   className="rounded-full px-2.5 py-0.5 text-xs font-semibold"
@@ -142,7 +131,7 @@ export default function Download() {
               </p>
             </div>
             <a
-              href="/QuickCull-2.3.0-macos12-arm64.dmg"
+              href="/QuickCull-2.3.1-macos12-arm64.dmg"
               download
               className="cta-btn flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold whitespace-nowrap"
               style={{
