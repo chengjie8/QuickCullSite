@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect } from "react";
+import { track } from "@vercel/analytics";
 
+const VERSION = "2.3.1";
 const changes = ["Minor security update"];
 
 export default function Download() {
@@ -133,6 +135,7 @@ export default function Download() {
             <a
               href="/QuickCull-2.3.1-macos12-arm64.dmg"
               download
+              onClick={() => track("download", { version: VERSION })}
               className="cta-btn flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold whitespace-nowrap"
               style={{
                 background: "rgba(201, 148, 58, 0.15)",
