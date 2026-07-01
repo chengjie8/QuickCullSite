@@ -3,8 +3,12 @@
 import { useEffect } from "react";
 import { track } from "@vercel/analytics";
 
-const VERSION = "2.3.1";
-const changes = ["Minor security update"];
+const VERSION = "2.4.0";
+const changes = [
+  "Delete to Trash — move the current photo or an entire multi-selection to the system Trash with a confirmation dialog. Files are recoverable (not permanently unlinked), and it works across internal and external volumes.",
+  'Two ways to delete — Cmd+Delete shortcut, or the filmstrip right-click "Delete" entry. Right-clicking inside a multi-selection deletes the whole selection; otherwise just that photo.',
+  "Redesigned confirmation dialog — clearer warning header, Trash-accurate copy, and a right-aligned destructive primary button with a keyboard hint.",
+];
 
 export default function Download() {
   useEffect(() => {
@@ -112,7 +116,7 @@ export default function Download() {
             <div>
               <div className="flex items-center gap-3">
                 <h2 className="font-[family-name:var(--font-syne)] text-2xl font-bold tracking-tight">
-                  v2.3.1
+                  v2.4.0
                 </h2>
                 <span
                   className="rounded-full px-2.5 py-0.5 text-xs font-semibold"
@@ -133,7 +137,7 @@ export default function Download() {
               </p>
             </div>
             <a
-              href="/QuickCull-2.3.1-macos12-arm64.dmg"
+              href="/QuickCull-2.4.0-macos12-arm64.dmg"
               download
               onClick={() => track("download", { version: VERSION })}
               className="cta-btn flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold whitespace-nowrap"
