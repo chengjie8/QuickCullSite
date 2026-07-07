@@ -188,9 +188,11 @@ export default function Home() {
         <div className="flex items-center gap-3">
           <a
             href="#features"
-            className="rounded-full px-5 py-2 text-sm font-medium transition-colors"
+            className="cta-btn relative rounded-full px-5 py-2 text-sm font-medium"
             style={{
-              color: "var(--text-secondary)",
+              background: "rgba(201, 148, 58, 0.12)",
+              color: "var(--accent-light)",
+              border: "1px solid rgba(201, 148, 58, 0.2)",
             }}
           >
             Features
@@ -206,11 +208,9 @@ export default function Home() {
           </a>
           <a
             href="/download"
-            className="cta-btn relative rounded-full px-5 py-2 text-sm font-medium"
+            className="rounded-full px-5 py-2 text-sm font-medium transition-colors"
             style={{
-              background: "rgba(201, 148, 58, 0.12)",
-              color: "var(--accent-light)",
-              border: "1px solid rgba(201, 148, 58, 0.2)",
+              color: "var(--text-secondary)",
             }}
           >
             Download

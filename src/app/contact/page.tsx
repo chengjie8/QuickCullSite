@@ -22,17 +22,37 @@ export default function Contact() {
           <span className="text-xl">⚡</span>
           <span>QuickCull</span>
         </Link>
-        <Link
-          href="/download"
-          className="cta-btn relative rounded-full px-5 py-2 text-sm font-medium"
-          style={{
-            background: "rgba(201, 148, 58, 0.12)",
-            color: "var(--accent-light)",
-            border: "1px solid rgba(201, 148, 58, 0.2)",
-          }}
-        >
-          Download
-        </Link>
+        <div className="flex items-center gap-3">
+          <Link
+            href="/#features"
+            className="rounded-full px-5 py-2 text-sm font-medium transition-colors"
+            style={{
+              color: "var(--text-secondary)",
+            }}
+          >
+            Features
+          </Link>
+          <Link
+            href="/contact"
+            className="cta-btn relative rounded-full px-5 py-2 text-sm font-medium"
+            style={{
+              background: "rgba(201, 148, 58, 0.12)",
+              color: "var(--accent-light)",
+              border: "1px solid rgba(201, 148, 58, 0.2)",
+            }}
+          >
+            Contact
+          </Link>
+          <Link
+            href="/download"
+            className="rounded-full px-5 py-2 text-sm font-medium transition-colors"
+            style={{
+              color: "var(--text-secondary)",
+            }}
+          >
+            Download
+          </Link>
+        </div>
       </nav>
 
       {/* ─── Hero ─── */}

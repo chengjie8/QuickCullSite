@@ -62,6 +62,15 @@ export default function Download() {
         </Link>
         <div className="flex items-center gap-3">
           <Link
+            href="/#features"
+            className="rounded-full px-5 py-2 text-sm font-medium transition-colors"
+            style={{
+              color: "var(--text-secondary)",
+            }}
+          >
+            Features
+          </Link>
+          <Link
             href="/contact"
             className="rounded-full px-5 py-2 text-sm font-medium transition-colors"
             style={{
@@ -71,7 +80,7 @@ export default function Download() {
             Contact
           </Link>
           <Link
-            href="/#features"
+            href="/download"
             className="cta-btn relative rounded-full px-5 py-2 text-sm font-medium"
             style={{
               background: "rgba(201, 148, 58, 0.12)",
@@ -79,7 +88,7 @@ export default function Download() {
               border: "1px solid rgba(201, 148, 58, 0.2)",
             }}
           >
-            Explore Features
+            Download
           </Link>
         </div>
       </nav>
