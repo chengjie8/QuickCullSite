@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Link from "next/link";
 import { track } from "@vercel/analytics";
 
 const VERSION = "2.4.0";
@@ -52,24 +53,35 @@ export default function Download() {
         className="nav-animate fixed top-0 z-40 flex w-full items-center justify-between px-6 py-4 backdrop-blur-md md:px-10"
         style={{ background: "rgba(5, 5, 7, 0.7)" }}
       >
-        <a
+        <Link
           href="/"
           className="flex items-center gap-2 font-[family-name:var(--font-syne)] text-lg font-bold tracking-tight"
         >
           <span className="text-xl">⚡</span>
           <span>QuickCull</span>
-        </a>
-        <a
-          href="/#features"
-          className="cta-btn relative rounded-full px-5 py-2 text-sm font-medium"
-          style={{
-            background: "rgba(201, 148, 58, 0.12)",
-            color: "var(--accent-light)",
-            border: "1px solid rgba(201, 148, 58, 0.2)",
-          }}
-        >
-          Explore Features
-        </a>
+        </Link>
+        <div className="flex items-center gap-3">
+          <Link
+            href="/contact"
+            className="rounded-full px-5 py-2 text-sm font-medium transition-colors"
+            style={{
+              color: "var(--text-secondary)",
+            }}
+          >
+            Contact
+          </Link>
+          <Link
+            href="/#features"
+            className="cta-btn relative rounded-full px-5 py-2 text-sm font-medium"
+            style={{
+              background: "rgba(201, 148, 58, 0.12)",
+              color: "var(--accent-light)",
+              border: "1px solid rgba(201, 148, 58, 0.2)",
+            }}
+          >
+            Explore Features
+          </Link>
+        </div>
       </nav>
 
       {/* ─── Hero ─── */}

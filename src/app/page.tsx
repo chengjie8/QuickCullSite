@@ -196,6 +196,15 @@ export default function Home() {
             Features
           </a>
           <a
+            href="/contact"
+            className="rounded-full px-5 py-2 text-sm font-medium transition-colors"
+            style={{
+              color: "var(--text-secondary)",
+            }}
+          >
+            Contact
+          </a>
+          <a
             href="/download"
             className="cta-btn relative rounded-full px-5 py-2 text-sm font-medium"
             style={{
