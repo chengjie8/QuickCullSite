@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const features = [
   {
@@ -137,6 +137,16 @@ const shortcuts: { keys: string[]; action: string }[] = [
 ];
 
 export default function Home() {
+  const [featuresActive, setFeaturesActive] = useState(false);
+
+  useEffect(() => {
+    const updateActive = () =>
+      setFeaturesActive(window.location.hash === "#features");
+    updateActive();
+    window.addEventListener("hashchange", updateActive);
+    return () => window.removeEventListener("hashchange", updateActive);
+  }, []);
+
   useEffect(() => {
     const revealClasses = [
       "scroll-reveal",
@@ -188,12 +198,20 @@ export default function Home() {
         <div className="flex items-center gap-3">
           <a
             href="#features"
-            className="cta-btn relative rounded-full px-5 py-2 text-sm font-medium"
-            style={{
-              background: "rgba(201, 148, 58, 0.12)",
-              color: "var(--accent-light)",
-              border: "1px solid rgba(201, 148, 58, 0.2)",
-            }}
+            className={
+              featuresActive
+                ? "cta-btn relative rounded-full px-5 py-2 text-sm font-medium"
+                : "rounded-full px-5 py-2 text-sm font-medium transition-colors"
+            }
+            style={
+              featuresActive
+                ? {
+                    background: "rgba(201, 148, 58, 0.12)",
+                    color: "var(--accent-light)",
+                    border: "1px solid rgba(201, 148, 58, 0.2)",
+                  }
+                : { color: "var(--text-secondary)" }
+            }
           >
             Features
           </a>
